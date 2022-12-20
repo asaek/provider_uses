@@ -11,9 +11,10 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => PruebaProvider(),
-        ),
+        ChangeNotifierProvider(create: (_) => PruebaProvider()),
+        Provider<ImageBackgroundWee>(
+          create: (context) => ImageBackgroundWee(),
+        )
       ],
       child: MyApp(),
     );
@@ -34,4 +35,9 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class ImageBackgroundWee {
+  String imageURL =
+      'https://cdn-japantimes.com/wp-content/uploads/2015/05/z6-sp-expomilano1-a-20150501-e1430724912692.jpg';
 }
